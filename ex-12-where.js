@@ -13,7 +13,7 @@
 function where(objects, filter) {
   var filtered = [];
   // recorro lista de objectos
-  for (i = 0; i < objects.length; i++) {
+  for (var i = 0; i < objects.length; i++) {
     var object = objects[i];
     var valid = true;
     // checo cada propiedad - valor del filtro
