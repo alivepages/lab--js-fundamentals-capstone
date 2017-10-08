@@ -20,6 +20,20 @@
 *
 **/
 
+function encodeURL(url) {
+  var replaces = [
+    {key: /%/g, replace: '%25'},
+    {key: / /g, replace: '%20'},
+    {key: /!/g, replace: '%21'},
+    {key: /"/g, replace: '%22'},
+    {key: /\$/g, replace: '%24'},
+    {key: /'/g, replace: '%27'}
+  ]
+  for (var i = 0; i < replaces.length; i++) {
+    url = url.replace(replaces[i].key, replaces[i].replace)
+  }
+  return url;
+}
 
 
 
@@ -47,6 +61,6 @@ console.log();
 
 var encodedURL4 = encodeURL("20% of $100")
 console.log("[4] Should return '20%25%20of%20%24100'")
-console.assert(encodedURL3 === "20%25%20of%20%24100")
+console.assert(encodedURL4 === "20%25%20of%20%24100")
 console.log("=================================================================================");
 console.log();

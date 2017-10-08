@@ -9,7 +9,12 @@
  *
 **/
 
-
+function merge(object1, object2) {
+  for (var prop in object2) {
+    object1[prop] = object2[prop];
+  }
+  return object1;
+}
 
 
 

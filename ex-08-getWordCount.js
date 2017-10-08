@@ -8,13 +8,19 @@
  *
 **/
 
-
-
-
-
-
-
-
+function getWordCount(text) {
+  var object = {}
+  var words = text.toLowerCase().split(' ');
+  for (var i = 0; i < words.length; i++) {
+    var property = words[i].replace(/\W+/g, '');
+    if (property in object) {
+      object[property]++;
+    } else {
+      object[property] = 1;
+    }
+  }
+  return object;
+}
 
 
 

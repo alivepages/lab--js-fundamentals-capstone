@@ -8,7 +8,21 @@
  * - for every number that is a multiple of 3 and 5, return "FizZBuzZ"
 **/
 
-
+function fizzbuzz(number) {
+  var string = '';
+  for (var i = 1; i <= number; i++) {
+    if (i % 15 === 0) {
+      string += 'FizZBuzZ'
+    } else if (i % 3 === 0) {
+      string += 'fizz'
+    } else if (i % 5 === 0) {
+      string += 'buzz'
+    } else {
+      string += '.'
+    }
+  }
+  return string;
+}
 
 
 /**

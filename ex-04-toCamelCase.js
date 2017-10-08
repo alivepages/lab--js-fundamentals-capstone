@@ -7,7 +7,14 @@
  *
  */
 
-
+function toCamelCase(sentence) {
+  var words = sentence.toLowerCase().split(' ');
+  var camelcase = words[0];
+  for (var i = 1; i < words.length; i++) {
+    camelcase += words[i][0].toUpperCase() + words[i].slice(1)
+  }
+  return camelcase;
+}
 
 
 

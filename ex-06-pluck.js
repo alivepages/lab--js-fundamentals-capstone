@@ -9,6 +9,13 @@
  *
 **/
 
+function pluck(objects, property) {
+  var values = [];
+  for (var i = 0; i < objects.length; i++) {
+    values.push(objects[i][property])
+  }
+  return values;
+}
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 

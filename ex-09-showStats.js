@@ -17,7 +17,24 @@
  *   }
 **/
 
-
+function showStats(number, data) {
+  var stats = {
+    count_inputEqualTo: 0,
+    count_inputGreaterThan: 0,
+    count_inputLessThan: 0,
+    inputArraySize: data.length
+  }
+  for (var i = 0; i < data.length; i++) {
+    if (number > data[i]) {
+      stats.count_inputGreaterThan++;
+    } else if (number < data[i]) {
+      stats.count_inputLessThan++;
+    } else {
+      stats.count_inputEqualTo++;
+    }
+  }
+  return stats;
+}
 
 
 

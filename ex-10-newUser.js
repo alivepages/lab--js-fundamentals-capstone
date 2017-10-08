@@ -17,7 +17,16 @@
  *
 **/
 
-
+function User(name, role) {
+  return {
+    name: name,
+    role: role,
+    createdAt: Date.now(),
+    hasPermissions: function(roles) {
+      return (roles.indexOf(this.role) >= 0)
+    }
+  }
+}
  //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
 var simpleUser = new User('jill88', 'visitor')
@@ -70,6 +79,6 @@ console.log("=======================================");
 console.log();
 
 console.log("[10] Should return true for permissions");
-console.assert(simpleUser.hasPermissions(contentCreatorList) === true )
+console.assert(adminUser.hasPermissions(contentCreatorList) === true )
 console.log("=======================================");
 console.log();

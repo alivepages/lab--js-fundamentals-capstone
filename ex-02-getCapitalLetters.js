@@ -7,7 +7,16 @@
 **/
 
 
-
+function getCapitalLetters(string){
+  var capitals = []
+  for (i = 0; i < string.length; i++) {
+    var letter = string[i]
+    if (letter.toUpperCase() === letter && letter.toLowerCase() !== letter) {
+      capitals.push(letter)
+    }
+  }
+  return capitals;
+}
 
 
 

@@ -10,7 +10,26 @@
 
 
 
-
+function where(objects, filter) {
+  var filtered = [];
+  // recorro lista de objectos
+  for (i = 0; i < objects.length; i++) {
+    var object = objects[i];
+    var valid = true;
+    // checo cada propiedad - valor del filtro
+    for (var prop in filter) {
+      if (filter[prop] !== object[prop]) {
+        valid = false;
+        break;
+      }
+    }
+    // si paso todos los filtros agrego a filtrado
+    if (valid) {
+      filtered.push(object);
+    }
+  }
+  return filtered;
+}
 
 
 
